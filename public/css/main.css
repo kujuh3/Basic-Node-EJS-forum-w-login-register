@@ -1,0 +1,61 @@
+textarea {
+    overflow: auto;
+    resize: vertical;
+    width: 100%;
+    border-radius: 3px;
+    border-style: groove;
+    border-width: 2px;
+    border-color: black;
+    margin-top: 5px;
+}
+
+h1, h2, h3, a, p   {
+    color: white;
+}
+
+#kommentti {
+    background-color: #4b4b4b;
+    margin-top: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
+    border-radius: 5px;
+}
+
+mark {
+    background-color: #7e7e7e;
+    border-radius: 3px;
+    color: white;
+}
+
+#content{
+    margin-top: 5%;
+    background-color: #585858;
+    border-radius: 5px;
+    width: 100%;
+}
+
+#deletecomment {
+    margin-top: 10px;
+}
+
+
+#otsikko, #sisalto, #kommenttiheader, #kommentti {
+    padding: 10px;
+}
+
+#otsikko, #kommenttiheader{
+        background-color: #7e7e7e;
+        color: #313131;
+        border-bottom: 3px solid #f4780b;
+        border-radius: 5px;  
+}
+
+#sisaltoteksti {
+    background-color: #444444;
+    margin: 5px;
+    border-radius: 5px;
+}
+
+#kommenttiheader {
+    color: white;
+}

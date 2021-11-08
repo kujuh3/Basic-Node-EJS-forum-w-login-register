@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/main.css">
+    <script src="/js/app.js"></script>
+    <title>OT6</title>
+</head>
+<body>
+    
+    <div class="container">
+        
+        
+        <% uutiset.forEach((uutinen) => { %>
+        <div id="content">
+        <div id="otsikko"><h2><%=uutinen.otsikko%></h2></div>
+        <div id="sisaltoteksti">
+        <div id="sisalto"><p><%- uutinen.sisalto %></p></div>
+        </div>
+        
+        <div id="kommenttiheader"><h5>Kommentit</h5></div>
+        <% let i = 1; %>
+        <% kommentit.forEach((kommentti) => { %>
+            <% if(kommentti.uutisId == uutinen.uutisId) { %>
+                <% 
+                    i++ 
+                    let aika = new Date(kommentti.aikaleima);
+                %>
+                
+                <div id="kommentti">
+                    <% jattaja.forEach((jatta) => { %>
+                        <% if (kommentti.kayttajaId == jatta.kayttajaId) { %>
+                            <p>Käyttäjä: <mark><%=jatta.kayttajatunnus%></mark>
+                        <% } %>
+                    <% }); %>
+                Päivämäärä: <mark><%=aika.getDate()%>.<%=aika.getMonth()+1%>.<%=aika.getFullYear()%></mark></p>
+                <p><%=kommentti.kommentti%></p>
+                <p><mark>Kommentti nro: #<%=kommentti.kommenttiId%></mark>
+                <mark>Uutis #<%=kommentti.uutisId%></mark>
+                <% if (kayttaja) { %>
+                    <% if (kommentti.kayttajaId == kayttaja.id) { %>
+                        <form method="POST" action="/poistakommentti">
+                            <input type="submit" id="deletecomment" class="btn btn-danger btn-sm" value="Poista kommentti">
+                            <input type="hidden" name="poista" value="<%=kommentti.kommenttiId%>">
+                        </form>
+                    <% }; %>
+                <% }; %>
+                </p>
+                
+            </div>
+        <% }}); %>
+    </div>
+        <div id="commentarea">
+            <% if (clearance) { %>
+                <form method="POST" action="/tallenna">
+                    <textarea id="textinput" name="kommentti"></textarea>
+                    <input type="submit" style="margin-top:5px;" value="Lähetä kommentti" class="btn btn-secondary btn-lg">
+                    <input type="hidden" name="uutisId" value="<%=uutinen.uutisId%>">
+                    <input type="hidden" name="kommenttiId" value="<%=i%>">
+                </form>
+            <% }; %>
+        </div>
+        <% }); %>
+
+
+    </div>
+    <% if (!clearance) { %>
+    <form class="form-signin" method="POST" action="/login/">
+        <input type="submit" style="width: 58%; margin: auto;" class="btn btn-lg btn-secondary btn-block" value="Kirjaudu sisään kommentoidaksesi">
+    </form>
+    <% }; %>
+
+    <% if (clearance) { %>
+    <br>
+    <br>
+    <br>
+    <a href="/logout/" class="btn btn-secondary">Kirjaudu ulos</a>
+    <% }; %>
+    
+
+    </div>
+
+
+</body>
+</html>

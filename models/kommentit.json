@@ -1,0 +1,23 @@
+[
+  {
+    "kommenttiId": "3",
+    "uutisId": "1",
+    "kayttajaId": 2,
+    "kommentti": "You can't delete this comment",
+    "aikaleima": 1632967375150
+  },
+  {
+    "kommenttiId": "3",
+    "uutisId": "2",
+    "kayttajaId": 2,
+    "kommentti": "Nor this",
+    "aikaleima": 1632967381799
+  },
+  {
+    "kommenttiId": "3",
+    "uutisId": "2",
+    "kayttajaId": 1,
+    "kommentti": "This is a comment",
+    "aikaleima": 1632967740728
+  }
+]

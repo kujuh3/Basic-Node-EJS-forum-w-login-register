@@ -1,0 +1,17 @@
+[
+  {
+    "kayttajaId": 1,
+    "kayttajatunnus": "besserwisser",
+    "salasana": "0b006251c563ea80622891f5ba2a4cd90d3fcb40bd9937541876a1effbc49293fb36e742e27365b21026afcf667770627082c81690da6aa486a6f0cddaebdeb7"
+  },
+  {
+    "kayttajaId": 2,
+    "kayttajatunnus": "Invoker",
+    "salasana": "be40a20a39e366f4fc1312f190f5cd1228f6488aba9051d37d6f0f06984e086b84c9dc4da075636da2c731203e15728487f79626b51f345832903b9f494d122a"
+  },
+  {
+    "kayttajaId": 3,
+    "kayttajatunnus": "asd",
+    "salasana": "e54ee7e285fbb0275279143abc4c554e5314e7b417ecac83a5984a964facbaad68866a2841c3e83ddf125a2985566261c4014f9f960ec60253aebcda9513a9b4"
+  }
+]
